@@ -9,7 +9,7 @@ drop APK files in folder with this files:
 5. certificate.pem 
 6. key.pk8 
 7. signapk.jar 
-8. signer.bat and run this script.
+    and run this script.
     you lose the APK names... they are renamed to numbers (1,2,3,4,5....) 
     
     enjoy!
