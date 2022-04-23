@@ -11,5 +11,6 @@ put APK files in folder with this files:
  7. signapk.jar
  8. signer.bat
  9. fw folder (in fw folder, put your framework-res.apk file)
+ 
  and run APK-Multi-Tool.bat. more info you can to find in the script.
 
