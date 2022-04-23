@@ -1,15 +1,15 @@
 # APK-Multi-Tool
-this version is a ALPHA release. 
-you can to decompile&recompile&sign up to 30 APK files at a time. 
-drop APK files in folder with this files: 
-1. this script 
-2. apktool.bat
-3. apktool_2.6.0.jar 
-4. aapt.exe 
-5. certificate.pem 
-6. key.pk8 
-7. signapk.jar 
-    and run this script.
-    you lose the APK names... they are renamed to numbers (1,2,3,4,5....) 
-    
-    enjoy!
+note: The dependencies are released subject to their license terms,   only my script (APK-Multi-Tool.bat) is subject to GNU GPL V3
+## How to use?
+put APK files in folder with this files:
+ 1. APK-Multi-Tool.bat
+ 2. apktool.bat
+ 3. apktool_2.6.0.jar
+ 4. aapt.exe
+ 5. certificate.pem
+ 6. key.pk8
+ 7. signapk.jar
+ 8. signer.bat
+ 9. fw folder (in fw folder, put your framework-res.apk file)
+ and run APK-Multi-Tool.bat. more info you can to find in the script.
+

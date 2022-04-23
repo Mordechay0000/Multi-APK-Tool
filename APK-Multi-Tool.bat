@@ -1,3 +1,6 @@
+:main
+echo off
+cls
 @echo ***********************************
 @echo Multi-Apk-Tool by A.I.V Mobile
 @echo ***********************************
@@ -5,19 +8,24 @@
 @echo 2. decompile all APKs (up to 30)
 @echo 3. recompile
 @echo 4. sigen recompiled APKs
-@echo 5. ReadMe
+@echo 5. clean
+@echo 6. ReadMe
+@echo 7. visit in our GitHub page
 @echo off
-CHOICE /C 12345 /M "Enter your choice:"
+CHOICE /C 1234567 /M "Enter your choice:"
     if %errorlevel%==1 goto :install_framework
     if %errorlevel%==2 goto :decompile
     if %errorlevel%==3 goto :recompile
     if %errorlevel%==4 goto :signer
-    if %errorlevel%==5 goto :readme
+    if %errorlevel%==5 goto :clean
+    if %errorlevel%==6 goto :readme
+    if %errorlevel%==7 goto :github
 :install_framework
 @echo =====================================================
-@echo you need to drop in this folder a framewrok of your device, as framework-res.apk
+@echo drop your framework-res, as fw/framework-res.apk
 @echo =====================================================
-apktool if framework-res.apk
+apktool if fw/framework-res.apk
+goto :main
 :decompile
 @echo ==============================
 @echo drop your APKs in this folder
@@ -33,35 +41,18 @@ for /r %%i in (*.apk) do (
 
 echo off
 for /L  %%a in (1,1,30) do apktool d %%a.apk
+@echo if you want to close software, close this window. if you want to return to main menu
 pause
+goto :main
 :recompile
 @echo ==============================
-@echo your APK is in /apk-name (for example, 1)/dist
+@echo your recompiled APKs is in /apk-name (for example, 1)/dist
 @echo ==============================
 for /L  %%a in (1,1,30) do apktool b %%a\
-:readme
-@echo *************************************
-@echo multi apk tool by aiv version 0.2
-@echo *************************************
-@echo README
-@echo =====================
-@echo this version is a ALPHA release.
-@echo you can to decompile up to 30 APK files at a time.
-@echo drop APK files in folder with this files:
-@echo 1. this script
-@echo 2. apktool.bat
-@echo 3. apktool_2.6.0.jar
-@echo 4. aapt.exe
-@echo 5. certificate.pem
-@echo 6. key.pk8
-@echo 7. signapk.jar
-@echo 8. signer.bat
-@echo and run this script.
-@echo you lose the APK names... they are renamed to numbers (1,2,3,4,5....)
-@echo All rights reserved (c) A.I.V Mobile 2021
-@echo =====================
+@echo your log is in log.txt
+@echo if you want to close software, close this window. if you want to return to main menu
 pause
-exit
+goto :main
 :signer
 mkdir sigend
 java -jar signapk.jar certificate.pem key.pk8 1/dist/1.apk sigend/1-sigen.apk
@@ -97,4 +88,41 @@ java -jar signapk.jar certificate.pem key.pk8 30/dist/30.apk sigend/30-sigen.apk
 @echo ------------------------------------------
 @echo your sigend APKs in sigend folder...
 @echo ------------------------------------------
+@echo if you want to close software, close this window. if you want to return to main menu
 pause
+goto :main
+:clean
+@echo NOTE: this option has delete all orginal APKs and decompiled APKs (project folders)!
+pause
+del *.apk
+for /L  %%a in (1,1,30) do rmdir /Q /S %%a\
+@echo if you want to close software, close this window. if you want to return to main menu
+pause
+goto :main
+:readme
+@echo *************************************
+@echo APK Multi Tool version 0.3
+@echo *************************************
+@echo README
+@echo =====================
+@echo you can to decompile up to 30 APK files at a time.
+@echo drop APK files in folder with this files:
+@echo 1. this script
+@echo 2. apktool.bat
+@echo 3. apktool_2.6.0.jar
+@echo 4. aapt.exe
+@echo 5. certificate.pem
+@echo 6. key.pk8
+@echo 7. signapk.jar
+@echo 8. signer.bat
+@echo 9. fw folder (in fw folder, put your framework-res.apk file)
+@echo and run this script.
+@echo you lose the APK names... they are renamed to numbers (1,2,3,4,5....)
+@echo this software is Open source (under GPL-3.0 License)
+@echo =====================
+@echo if you want to close software, close this window. if you want to return to main menu
+pause
+goto :main
+:github
+start https://github.com/AshiVered/APK-Multi-Tool
+goto :main
