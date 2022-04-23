@@ -1,6 +1,7 @@
 # APK-Multi-Tool
 note: The dependencies are released subject to their license terms,   only my script (APK-Multi-Tool.bat) is subject to GNU GPL V3
 ## How to use?
+first, isntall java.
 put APK files in folder with this files:
  1. APK-Multi-Tool.bat
  2. apktool.bat
