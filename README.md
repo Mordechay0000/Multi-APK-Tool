@@ -1,5 +1,5 @@
-# APK-Multi-Tool
-APK-Multi-Tool is a tool to extract and repack multiple APK files, at once.
+# Multi APK Tool
+Multi APK Tool is a tool to extract and repack multiple APK files, at once.
 
 ## How to use?
 first, install java.
@@ -15,7 +15,7 @@ put APK files in folder with this files:
  8. signer.bat
  9. fw folder (in fw folder, put your framework-res.apk file)
  
- and run APK-Multi-Tool.bat. more info you can to find in the script.
+ and run Multi-APK-Tool.bat. more info you can to find in the script.
  
  note: The dependencies are released subject to their license terms,   only my script (APK-Multi-Tool.bat) is subject to GNU GPL V3
 
